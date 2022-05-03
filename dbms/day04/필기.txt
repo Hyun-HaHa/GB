@@ -1,0 +1,25 @@
+1. hr 계정 풀기
+   - sqlplus
+   - system / 1234
+   - alter user hr identified by hr account unlock;
+   - alter user hr identified by 1234;
+   - grant connect, resource to hr;
+   - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
