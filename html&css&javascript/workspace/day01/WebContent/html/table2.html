@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<!-- 
+	<thead></thead>	: head 부분을 의미
+	<tbody></tbody>	: 테이블에서 본문을 의미
+	<th></th>		: 제목
+	<tfoot></tfoot>	: 표상에서 가장 아래쪽
+	-> thead, tbody, tfoot 각각의 위치가 바껴도 head, body, foot에 맞춰 테이블이 그려진다.
+ -->
+
+<body>
+	<h2>회원 정보 & 회비</h2>
+	
+	<img src="puppy.jpg" width="500" height="300"
+		alt="강아지 이미지" title="강아지 이미지">
+
+	<table border="2">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>성별</th>
+				<th>주소</th>
+				<th>나이</th>
+				<th>회비</th>
+			</tr>
+		</thead>
+			
+		<tbody>
+			<tr>
+				<td>철수</td>
+				<td>남</td>
+				<td rowspan="3">역삼동</td>
+				<td>23</td>
+				<td>1000원</td>
+			</tr>
+			<tr>
+				<td>영희</td>
+				<td>여</td>
+				<td>24</td>
+				<td>2000원</td>
+			</tr>
+			<tr>
+				<td>미영</td>
+				<td>남</td>
+				<td>25</td>
+				<td>3000원</td>
+			</tr>
+		</tbody>	
+		
+		<tfoot>	
+			<tr>
+				<td colspan="4">합계</td>
+				<td>6000원</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	
+</body>
+</html>
