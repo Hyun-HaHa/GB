@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 배열 & 함수
+		let s = ['이유덕', '이재영', '권종표', '이재영', '박민호', 
+     	 '강상희', '이재영', '김지완', '최승혁', '이성연', '박영서',
+      	 '박민호', '전경헌', '송정환', '김재성', '이유덕', '전경헌'];
+		
+		/*
+			1. '이재영' (매개변수)이란 이름이 몇번 반복되는지
+			체크하는 function
+			
+			결과 : 이재영  -> 3
+		*/
+		
+		function sayName(param) {
+			let name = param;	
+			let count = 0;	
+				
+			for (let i = 0; i < s.length; i++) {
+				if (name == s[i]) {		// s[i]의 값과 name이 같다면
+					count++;			// count 1증가
+				}
+			}
+			
+			return name + " -> " + count;
+		}
+		
+		document.write(sayName('이재영'));
+		document.write('<br>');
+		
+		/*
+			2. s배열에서 중복을 제거한 이름을 return해주는 함수를 생성
+			매개변수 없음
+		*/
+		
+		function distinct() {
+			let s2 = [];
+			
+			for (let i = 0; i < s.length; i++) {
+				let count = 0;
+				
+				for (let j = 0; j < s.length; j++) {
+					if(s[i] === s[j]){
+						count++;
+					}
+					
+				}
+				
+				if(count < 2){
+					s2.push(s[i]);
+				}
+			}
+			return s2;
+		}
+		document.write(distinct());
+		document.write('<br>');
+		
+	
+		/*
+			3. 함수생성, 매개변수(arr, value)
+			결과	: "해당 data" + value + " 은" + arr + "에 존재한다."
+				  "해당 data" + value + " 은" + arr + "에 존재하지 않는다."
+		*/
+		let arr = [10, 20, 30, 40];
+		
+		/*
+			param
+				arr 	: 배열
+				value	: 값
+			return 
+			String
+		*/	
+			
+		function find(arr, value) {
+			let indexNum = arr.indexOf(value);		
+					
+			if (indexNum == -1) {
+				return "해당 data " + value + "은 " + arr + "에 존재하지 않는다.";
+			} else {
+				return "해당 data " + value + "은 " + arr + "에 존재한다."
+			}
+		}
+		
+		document.write(find(arr, 10));	
+	</script>
+</body>
+</html>
