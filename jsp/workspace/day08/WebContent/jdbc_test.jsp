@@ -29,7 +29,7 @@
 		// create, drop
 // 		String sql = "INSERT INTO car(carnum, brand, color, price) values('4', 'sonata', 'black', 50000000)";
 // 		String sql = "DELETE car WHERE carnum = 2";
-// 		String sql = "UPDATE car SET BRAND = 'K3' WHERE BRAND = 'sonata'";
+		String sql = "UPDATE car SET BRAND = 'K3' WHERE BRAND = 'sonata'";
 		
 		// 결과값 변수 선언
 		int check = 0;
