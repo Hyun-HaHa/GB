@@ -38,7 +38,16 @@
 						</button>
 					</div>
 				</div>
-					<!-- 비밀번호 찾기, 회원가입 -->
+				<!-- 비밀번호 찾기, 회원가입 -->
+				<p class="signForm_bottom">
+					<span class="find-pw">
+						<a href="#">비밀번호 찾기</a>
+					</span>
+					<span class="signUp-btn">
+						<a href="#">회원가입</a>
+					</span>
+				</p>
+				
 				
 			</div>
 		</div>

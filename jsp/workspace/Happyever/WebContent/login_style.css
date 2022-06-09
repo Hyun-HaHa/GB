@@ -102,5 +102,47 @@ input{
 	color: #2C952C;
 }
 
+.signForm_bottom{
+	margin-top: 15px;
+	margin-bottom: 20px;
+	justify-content: center;
+	display: flex;
+}
 
+p{
+	margin: 0;
+	line-height: 1.6;
+}
 
+span{
+	font-style: inherit;	
+}
+
+.signForm_bottom .find-pw{
+	line-height: 1.38;
+	letter-spacing: -.3px;
+	font-size: 13px;
+	font-weight: 400;
+	cursor: pointer;
+	border-bottom: 1px solid #858a8d;
+}
+
+.signForm_bottom .signUp-btn{
+	margin-left: 16px;
+	line-height: 1.38;
+	letter-spacing: -.3px;
+	font-size: 13px;
+	font-weight: 400;
+	cursor: pointer;
+	border-bottom: 1px solid #858a8d;
+}
+
+.signForm_bottom .find-pw a{
+	color: #616568;
+	text-decoration: none;
+}
+
+.signForm_bottom .signUp-btn a{
+	color: #616568;
+	text-decoration: none;
+}
