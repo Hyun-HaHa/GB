@@ -7,6 +7,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SUIT-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .login_content{
 	display: block;
 	min-height: 83vh;
@@ -23,7 +37,6 @@
 }
 
 .signIn_form{
-	width: 70%;
 	padding: 4rem 12.3rem 16.1rem;
 	display: flex;
 	flex-direction: column;
@@ -47,8 +60,7 @@ img{
 
 /* signForm_middle */
 .signForm_middle{
-	width: 100%;
-	max-width: 25.1rem;
+	
 }
 
 .titleText{
@@ -85,23 +97,25 @@ input{
 
 .login_button{
 	width: 26rem;
-	border-radius: 1.1rem;
+	border-radius: 0.7rem;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 1.3rem 2.8rem;
+	padding: 1rem 2.8rem;
 	border: none;
 	cursor: pointer;
 	background-color: #C8FAC8;
+	font-family: 'SUIT-Bold';
 }
 
 .login_submit_text{
 	display: inline-block;
-	font-size: 1rem;
+	font-size: 20px;
 	color: #2C952C;
 }
 
+/* signForm_bottom */
 .signForm_bottom{
 	margin-top: 15px;
 	margin-bottom: 20px;
@@ -140,9 +154,55 @@ span{
 .signForm_bottom .find-pw a{
 	color: #616568;
 	text-decoration: none;
+	font-family: 'SUIT-Medium';
 }
 
 .signForm_bottom .signUp-btn a{
 	color: #616568;
 	text-decoration: none;
+	font-family: 'SUIT-Medium';
 }
+
+/* 카카오로그인 */
+.social-login{
+	position: relative;
+}
+
+.kakao-login{
+	display: flex;
+	flex-direction: row;
+	margin-top: 13px;
+}
+
+.kakao-login-btn{
+	width: 26rem;
+	border: 0;
+	background: #FFEB5A;
+	font-size: 15px;
+	color: #2e2e2e;
+	line-height: 2.4rem;
+	border-radius: 0.7rem;
+	text-align: center;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+    padding: 0.5rem 2.8rem;
+    font-family: 'SUIT-Bold';
+}
+
+/* line-text */
+.social-login-line{
+	position: relative;
+	bottom: -8px;
+	display: block;
+	margin: 0;
+	height: 1px;
+	border: none;
+}
+
+.social-login-line-text{
+	font-family: 'SUIT-Medium';
+	color: #616568;
+	font-size: 13px;
+}
+
