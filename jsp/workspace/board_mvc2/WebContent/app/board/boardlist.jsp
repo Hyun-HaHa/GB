@@ -57,9 +57,13 @@
 				<c:when test="${boardList != null and fn:length(boardList) > 0 }">
 					<!-- 게시글 작성 : 글이 있는 경우 -->
 					<c:forEach var="board" items="${boardList }">
-						<tr align="center" valign="middle">
+						<tr align="center" valign="middle" onmouseover="this.style.background='#bbdefb'" onmouseout="this.style.background=''">
 							<td height="23px;"> ${board.boardnum } </td>
-							<td height="23px;"> ${board.boardtitle } </td>
+							<td height="23px;">
+								<a href="${pageContext.request.contextPath}/board/BoardView.bo?boardnum=${board.boardnum}">
+									${board.boardtitle }
+								</a> 
+							</td>
 							<td height="23px;"> ${board.username } </td>
 							<td height="23px;"> ${board.boarddate } </td>
 							<td height="23px;"> ${board.boardreadcount } </td>
@@ -103,7 +107,7 @@
 		
 		<table style="border: 0px; width: 900px;">
 			<tr align="right" valign="middle">
-				<td><a href="">[글쓰기]</a></td>
+				<td><a href="${pageContext.request.contextPath}/board/BoardWrite.bo">[글쓰기]</a></td>
 			</tr>
 		</table>	
 		

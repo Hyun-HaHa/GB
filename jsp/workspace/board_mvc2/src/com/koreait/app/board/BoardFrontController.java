@@ -32,10 +32,26 @@ public class BoardFrontController extends HttpServlet{
 		ActionForward forward = null;
 		
 		switch (requestURI) {
-		case "/board/Boardlist.bo":
-			System.out.println("/board/Boardlist.bo 도착");
-			forward = new BoardlistAction().execute(req, resp);
-			break;
+			case "/board/Boardlist.bo":
+				System.out.println("/board/Boardlist.bo 도착");
+				forward = new BoardlistAction().execute(req, resp);
+				break;
+				
+			case "/board/BoardWrite.bo":
+				System.out.println("글쓰기 페이지 도착");
+				forward = new ActionForward(true, req.getContextPath() + "/app/board/boardwrite.jsp");
+				break;
+				
+			case "/board/BoardWriteOk.bo":
+				System.out.println("BoardWriteOk.bo 도착");
+				forward = new BoardWriteOk().execute(req, resp);
+				break;
+				
+			case "/board/BoardView.bo":
+				System.out.println("글 보기 도착");
+				forward = new BoardViewAction().execute(req, resp);
+				break;
+				
 		}
 		
 		// 일괄처리

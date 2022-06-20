@@ -33,9 +33,36 @@ public class BoardDAO {
 
 	// 글 전체 개수 조회
 	public int getBoardCnt() {
-		
 		return sqlsession.selectOne("Board.getBoardCnt");
 	}
+
+	// 글쓰기 
+	public boolean insertBoard(BoardDTO board) {
+		boolean result = false;
+		
+		if(sqlsession.insert("Board.inserBoard", board) == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+	// 글 보기
+	public BoardDTO getDetail(int boardnum) {
+		return (BoardDTO)sqlsession.selectOne("Board.getDetail", boardnum);
+		
+	}
+	
+	// 조회수
+	public void updateReadCount(int boardnum) {
+		sqlsession.update("Board.updateReadCount", boardnum);
+	}
+	
+	// 글 작성 후 바로 글 보기
+	public int getSeq() {
+		return sqlsession.selectOne("Board.getSeq");
+	}
+	
+	
 	
 	
 	
