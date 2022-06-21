@@ -19,6 +19,8 @@ public class BoardViewAction implements Action{
 		// 조회수 update
 		bdao.updateReadCount(boardnum);
 		
+		// 댓글 조회
+		req.setAttribute("replylist", bdao.getReplys(boardnum));
 		
 		req.setAttribute("board", bdao.getDetail(boardnum));
 

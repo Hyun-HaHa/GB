@@ -61,7 +61,49 @@ public class BoardDAO {
 	public int getSeq() {
 		return sqlsession.selectOne("Board.getSeq");
 	}
+
+	// 댓글 저장
+	public boolean addReply(ReplyDTO reply) {
+		boolean result = false;
+		
+		if (sqlsession.insert("Board.addReply", reply) != 0) {
+			result = true;
+		}
+		
+		return result;
+	}
 	
+	// 댓글 조회
+	public List<ReplyDTO> getReplys(int boardnum) {
+		List<ReplyDTO> list = sqlsession.selectList("Board.getReplys", boardnum);
+		return list;
+	}
+	
+	// 댓글 수정하기
+	public boolean updateReply(int replynum, String replycontents) {
+		boolean result = false;
+		HashMap<String, Object> datas = new HashMap<>();
+		datas.put("replynum", replynum);
+		datas.put("replycontents", replycontents);
+		
+		if (sqlsession.update("Board.updateReply", datas) != 0) {
+			result = true;
+		}
+		
+		
+		return result;
+	}
+	
+	// 댓글 삭제하기
+	public boolean deleteReply(int replynum) {
+		boolean result = false;
+		
+		if (sqlsession.delete("Board.deleteReply", replynum) == 1) {
+			result = true;
+		}
+		
+		return result;
+	}
 	
 	
 	
