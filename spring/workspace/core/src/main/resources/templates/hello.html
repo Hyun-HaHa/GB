@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 서버로 부를때는 Hello spring boot는 안뜬다. th에 있는 부분이 우선시 된다.-->
+	<p th:text="'Hello.' + ${data}">Hello spring boot</p>
+</body>
+</html>
