@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Spring EL표현식</h1>
+	<ul>
+		Object
+		<li>
+			${user.username} = <span th:text="${user.username}"></span>
+		</li>
+		<li>
+			${user['username']} = <span th:text="${user['username']}"></span>
+		</li>
+		<li>
+			${user.getUsername()} = <span th:text="${user.getUsername()}"></span>
+		</li>
+	</ul>
+
+	<ul>
+		List
+		<li>
+			${users[0].username} = <span th:text="${users[0].username}"></span>
+		</li>
+		<li>
+			${users[0]['username']} = <span th:text="${users[0]['username']}"></span>
+		</li>
+		<li>
+			${users[1].getUsername()} = <span th:text="${users[1].getUsername()}"></span>
+		</li>
+	</ul>
+
+	<ul>
+   		Map
+   		<li>
+   			${userMap['userA'].username} = <span th:text="${userMap['userA'].username}"></span>
+   		</li>
+   		<li>
+   			${userMap['userA']['username']} = <span th:text="${userMap['userA']['username']}"></span>
+   		</li>
+   		<li>
+   			${userMap['userA'].getUsername()} = <span th:text="${userMap['userA'].getUsername()}"></span>
+   		</li>
+   </ul>
+   
+   <h1>지역 변수선언 - (th:with)</h1>
+   <div th:with="first=${users[0]}"> <!-- ${users[0]}가 first라는 이름으로 변수 선언, <div>안에 선언함으로써 이 태그 안에서 지역변수로 사용할 수 있다.-->
+   		<p>
+   			처음 사람의 이름은 <span th:text="${first.username}"></span>
+   		</p>
+   		<p>
+   			처음 사람의 나이는 <span th:text="${first.age}"></span>
+   		</p>
+   </div>
+   
+   
+</body>	
+</html>
