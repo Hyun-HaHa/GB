@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>URL 링크</h1>
+	<ul>
+		<li>
+			<a th:href="@{/hello}">basic url</a>
+		</li>
+		<li>
+			<!-- http://localhost:9090/hello?username=data1&userage=data2 -->
+			<a th:href="@{/hello(username=${param1}, userage=${param2})}">query param</a>
+		</li>
+		<li>
+			<!-- http://localhost:9090/hello/data1/data2 -->
+			<a th:href="@{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}">
+				path value
+			</a>
+		</li>
+		<li>
+			<!-- http://localhost:9090/hello/data1?param2=data2 -->
+			<a th:href="@{/hello/{param1}(param1=${param1}, param2=${param2})}">
+				path + query param
+			</a>
+		</li>
+	</ul>
+	
+</body>
+</html>

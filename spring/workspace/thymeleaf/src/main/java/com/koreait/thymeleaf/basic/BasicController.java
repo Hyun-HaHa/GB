@@ -1,5 +1,6 @@
 package com.koreait.thymeleaf.basic;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -62,11 +63,76 @@ public class BasicController {
 	}
 	
 	
+	@GetMapping("/date")
+	public String date(Model model) {
+		model.addAttribute("localDateTime", LocalDateTime.now());
+		return "basic/date";
+	}
 	
+	@GetMapping("/link")
+	public String link(Model model) {
+		model.addAttribute("param1", "data1");
+		model.addAttribute("param2", "data2");
+		return "basic/link";
+	}
+	
+	@GetMapping("literal")
+	public String literal(Model model) {
+		model.addAttribute("data", "Spring");
+		return "basic/literal";
+	}
+	
+	
+	@GetMapping("/operation")
+	public String operation(Model model) {
+		model.addAttribute("nulldata", null);
+		model.addAttribute("data", "spring");
+		
+		return "basic/operation";
+	}
+	
+	@GetMapping("attribute")
+	public String attribute() {
+		return "basic/attribute";
+	}
+	
+	
+	@GetMapping("each")
+	public String each(Model model) {
+//		List<User> list = new ArrayList<>();
+//		list.add(new User("userA", 10));
+//		list.add(new User("userB", 20));
+//		list.add(new User("userC", 30));
+//		model.addAttribute("users", list);
+		addUsers(model);
+		return "basic/each";
+	}
+
+	// 하나의 메서드에 하나의 역할만 하도록 각각 모듈화 (분리)
+	private void addUsers(Model model) {
+		List<User> list = new ArrayList<>();
+		list.add(new User("userA", 10));
+		list.add(new User("userB", 20));
+		list.add(new User("userC", 30));
+		model.addAttribute("users", list);
+	}
+	
+	
+	@GetMapping("condition")
+	public String condition(Model model) {
+		addUsers(model);
+		return "basic/condition";
+	}
+	
+	
+	@GetMapping("comments")
+	public String comments(Model model) {
+		model.addAttribute("data", "spring");
+		return "basic/comments";
+	}
 	
 	
 }
-
 
 
 
