@@ -1,0 +1,22 @@
+1. RedirectAttribute
+   - redirect시 사용되는 여러 속성
+   - PathVariable
+   - 쿼리 파라미터
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

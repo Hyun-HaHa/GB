@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script>
+		let username = "[[${user.username}]]";		// 문자열을 의미하는 ""가 없이 나온다. let username = userA 
+		let age = [[${user.age}]];
+		
+		// 자바스크립트 내추럴 템플릿
+		let username2 = /*[[${user.username}]]*/ "test username";
+		
+		// 객체
+// 		let user = [[${user}]];						// 주소값만 받아온다.
+		
+	</script>
+	
+	<script th:inline="javascript">
+		let username_th = [[${user.username}]];		// 문자열 처리가 자동으로 된다.  let username = "userA"
+		let age_th = [[${user.age}]];
+		
+		// 자바스크립트 내추럴 템플릿
+		let username2_th = /*[[${user.username}]]*/ "test username";
+		
+		// 객체
+		let user_th = [[${user}]];					// json 타입으로 객체를 던져준다
+	</script>
+	
+	
+	<script th:inline="javascript">
+       [# th:each="user, stat : ${users}"]
+          let user[[${stat.count}]] = [[${user}]];
+       [/]
+   </script>
+</body>
+</html>
