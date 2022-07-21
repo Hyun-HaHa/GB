@@ -143,7 +143,7 @@ public class BasicItemController {
 	
 	
 	@GetMapping("/{itemId}/edit")
-	public String edtiForm(@PathVariable long itemId, Model model) {
+	public String editForm(@PathVariable long itemId, Model model) {
 		Item item = itemRepository.findById(itemId);
 		model.addAttribute("item", item);
 		
@@ -152,7 +152,7 @@ public class BasicItemController {
 	
 	
 	@PostMapping("/{itemId}/edit")
-	public String edti(@PathVariable Long itemId, @ModelAttribute Item item) {
+	public String edit(@PathVariable Long itemId, @ModelAttribute Item item) {
 		itemRepository.update(itemId, item);
 		
 		return "redirect:/basic/items/{itemId}";
