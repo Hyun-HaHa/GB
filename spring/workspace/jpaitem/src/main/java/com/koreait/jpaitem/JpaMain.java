@@ -1,4 +1,4 @@
-package com.koreait.jpaitem.domain;
+package com.koreait.jpaitem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
